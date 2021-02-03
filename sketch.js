@@ -23,6 +23,13 @@ function setup() {
   // for (var k = 0; k<= width; k = k + 80) {
   //   dividers.push(new Ground(k, height - dividersHeight/2, 10, divisionHeight));
   // }
+  
+  for (var j = 40; j<= width; j = j + 80) {
+    plinkos.push(new Plinko(j, 75));
+  }
+  for (var j = 15; j<= width-10; j = j + 50) {
+    plinkos.push(new Plinko(j, 175));
+  }
 
   
 
@@ -38,6 +45,7 @@ function setup() {
 
 function draw() {
   background(253, 19, 175);
+  Engine.update(engine);
 
   ground.display();
 
@@ -50,10 +58,8 @@ function draw() {
   divider7.display();
   divider8.display();
 
-  for (var j = 40; j<= width; j = j + 80) {
-    plinkos.push(new Plinko(j, 75));
+  for(k=0;k<plinkos.length;k++){
+    plinkos[k].display();
   }
-  for (var j = 15; j<= width-10; j = j + 50) {
-    plinkos.push(new Plinko(j, 175));
-  }
+  
 }
