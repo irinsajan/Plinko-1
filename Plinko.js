@@ -1,12 +1,10 @@
 class Plinko {
     constructor(x, y, radius) {
         var options = {
-            restitution:0.3,
-            friction:0.5,
-            density:1.2
+            isStatic: true
         }
-        this.body = Matter.Bodies.circle(x, y, radius, options);
-        this.radius = radius;
+        this.body = Matter.Bodies.circle(x, y, 10, options);
+        this.radius = 10;
         
         World.add(world, this.body);
       }
